@@ -1,3 +1,4 @@
+import main1 from main
 import sys
 import math
 from collections import deque
@@ -83,6 +84,7 @@ class OrderBook(object):
 
 
     def process_market_order(self,quote,verbose):
+         return quote,verbose
 
     def process_limit_order(self,quote,from_data,verbose):
         order_in_book=None
@@ -115,10 +117,13 @@ class OrderBook(object):
                     order_in_book=quote
 
     def cancel_order(self,side,order_id,time=None):
+              return side,order_id,time
 
     def modify_order(self,order_id,order_update,time=None):
+               return order_id,order_update,time
 
     def get_volume_at_price(self,side,price):
+                 return side,price
 
     def get_best_bid(self):
         return self.bids.max_price()
@@ -133,6 +138,8 @@ class OrderBook(object):
         return self.asks.max_price()
         
     def tape_dump(self,filename,filenode,tapenode):
+          return filename,filenode,tapenode
 
     def __str__(self):
+               return main1
 
